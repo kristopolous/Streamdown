@@ -79,6 +79,7 @@ The default values are [at the beginning of the source](https://github.com/krist
 *   `PrettyPad` (boolean, default: `false`): Uses a unicode vertical pad trick to add a half height background to code blocks. This makes copy/paste have artifacts. See [#2](https://github.com/kristopolous/Streamdown/issues/2). I like it on. But that's just me
 *   `PrettyBroken` (boolean, default: `false`): This will break the copy/paste assurance above. The output is much prettier, but it's also broken. So it's pretty broken. Works nicely with PrettyPad.
 *   `ListIndent` (integer, default: `2`): This is the recursive indent for the list styles.
+*   `CodeIndent` (integer, default: `2`): This is the indent for code blocks.
 *   `Syntax` (string, default `monokai`): This is the syntax [highlighting theme which come via pygments](https://pygments.org/styles/).
 
 Example:

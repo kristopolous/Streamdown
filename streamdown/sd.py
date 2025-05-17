@@ -53,8 +53,9 @@ Timeout    = 0.1
 Savebrace  = true
 
 [style]
-Margin          = 2 
+Margin          = 2
 ListIndent      = 2
+CodeIndent      = 2
 PrettyPad       = true
 PrettyBroken    = true
 Width           = 0
@@ -803,7 +804,7 @@ def parse(stream):
                 indent, line_wrap = code_wrap(line)
                 
                 state.where_from = "in code"
-                pre = [state.space_left(listwidth = True), '  '] if Style.PrettyBroken else ['', '']
+                pre = [state.space_left(listwidth = True), ' ' * Style.CodeIndent] if Style.PrettyBroken else ['', '']
 
                 for tline in line_wrap:
                     # wrap-around is a bunch of tricks. We essentially format longer and longer portions of code. The problem is
@@ -1091,7 +1092,7 @@ def main():
 
     for color in ["Dark", "Mid", "Symbol", "Head", "Grey", "Bright"]:
         setattr(Style, color, apply_multipliers(style, color, H, S, V))
-    for attr in ['PrettyPad', 'PrettyBroken', 'Margin', 'ListIndent', 'Syntax']:
+    for attr in ['PrettyPad', 'PrettyBroken', 'Margin', 'ListIndent', 'CodeIndent', 'Syntax']:
         setattr(Style, attr, style.get(attr))
     for attr in ['CodeSpaces', 'Clipboard', 'Logging', 'Timeout', 'Savebrace']:
         setattr(state, attr, features.get(attr))
